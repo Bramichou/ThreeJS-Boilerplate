@@ -6,7 +6,8 @@
   "author": "IBRAHIM MENZEL <menzel.ibrahim@hotmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "gulp"
+    "start": "gulp",
+    "minify": "gulp minify"
   },
   "devDependencies": {
     "babel-cli": "^6.22.2",
@@ -19,6 +20,7 @@
     "gulp-babel": "^6.1.2",
     "gulp-browserify": "^0.5.1",
     "gulp-sourcemaps": "^2.4.1",
+    "gulp-stylus": "^2.6.0",
     "gulp-uglify": "^2.0.1",
     "pump": "^1.0.2",
     "vinyl-buffer": "^1.0.0",
