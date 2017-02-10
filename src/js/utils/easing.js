@@ -1,3 +1,5 @@
+/* easing object made by Dorian Lods : github.com/mairod */
+
 export default Math.easing = {
     linear:               function (t) { return t },
     easeInQuad:           function (t) { return t*t },
