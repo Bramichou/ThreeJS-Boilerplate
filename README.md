@@ -1,7 +1,7 @@
 # A boiler plate that start a Three.JS project
 
 ## Start a project
-This project use yarn instead of npm, why ? Because it is more FAAAAASSTTTT :) So let's install yarn  here [(https://yarnpkg.com/lang/en/)]
+This project use yarn instead of npm, why ? Because it is more FAAAAASSTTTT :) So let's install yarn  [click here](https://yarnpkg.com/lang/en/)
 
 Then you have to install dependencies with
 
