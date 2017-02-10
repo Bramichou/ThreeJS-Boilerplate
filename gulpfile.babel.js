@@ -15,7 +15,7 @@ function compile(watch) {
 
     function rebundle() {
         bundler.bundle()
-            .on('error', function(err) { console.error(err); this.emit('end') })
+            .on('error', (err) => { console.error(err); this.emit('end') })
             .pipe(source('build.js'))
             .pipe(buffer())
             .pipe(sourcemaps.init({ loadMaps: true }))
@@ -25,7 +25,7 @@ function compile(watch) {
     }
 
     if (watch) {
-        bundler.on('update', function() {
+        bundler.on('update', () => {
             console.log('-> bundling...')
             rebundle()
         })
@@ -38,30 +38,30 @@ function watch() {
     return compile(true);
 };
 
-gulp.task('browser-sync', function() {
+gulp.task('browser-sync', () => {
     browserSync.init({
         server: {
             baseDir: "./"
         },
-        open : false
+        open : true
     })
 
     gulp.watch('./src/js/**/*.js', ['build'])
-    gulp.watch('./src/style/*.styl', ['stylus'])
+    gulp.watch('./src/style/**/*.styl', ['stylus'])
 
 })
 
-gulp.task('stylus', function () {
-    return gulp.src('./src/style/*.styl')
+gulp.task('stylus', () => {
+    return gulp.src('./src/style/**/*.styl')
         .pipe(stylus())
         .pipe(gulp.dest('./build/style'))
         .pipe(browserSync.stream())
 })
 
 
-gulp.task('compress', function (cb) {
+gulp.task('compress', (cb) => {
     pump([
-            gulp.src('build/*.js'),
+            gulp.src('build/**/*.js'),
             uglify(),
             gulp.dest('compressed')
         ],
@@ -69,8 +69,8 @@ gulp.task('compress', function (cb) {
     )
 })
 
-gulp.task('build', function() { return compile() })
-gulp.task('watch', function() { return watch() })
+gulp.task('build', () => { return compile() })
+gulp.task('watch', () => { return watch() })
 
 gulp.task('default', ['watch', 'browser-sync'])
 gulp.task('minify', ['compress'])
