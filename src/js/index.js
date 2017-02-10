@@ -1,7 +1,5 @@
 import * as THREE from 'three'
 import EASE from './utils/easing'
-import FrameRateUI from './utils/framerate_ui'
-import audioAnalyze from './utils/audio_analyze'
 import Sphere from './class/sphere'
 
 window.addEventListener('load', init)
