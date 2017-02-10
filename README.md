@@ -33,7 +33,7 @@ Then let's get creative ! :)
 
 Boilerplate for Three.JS that create a very basic scene.
 
-This boilerplate use Gulp with Babel/Browerify and BrowserSync
+This boilerplate use Gulp with Babel for ES6, Browerify & BrowserSync 
 
 
 Using in front HTML wtih Stylus for style
