@@ -5,9 +5,9 @@ This project use yarn instead of npm, why ? Because it is more FAAAAASSTTTT :) S
 
 Then you have to install dependencies with
 
-'''
+```
 yarn
-'''
+```
 
 Which is like npm install.
 
@@ -20,12 +20,20 @@ To build the project, run
 yarn start
 ```
 
+#### Minify and uglify
+
+To minify and uglify the project, run
+
+```
+yarn minify
+```
+
 Then let's get creative ! :)
 
 
 Boilerplate for Three.JS that create a very basic scene.
 
-This boiler plate use Gulp with Babel/Browerify and BrowserSync
+This boilerplate use Gulp with Babel/Browerify and BrowserSync
 
 
 Using in front HTML wtih Stylus for style
