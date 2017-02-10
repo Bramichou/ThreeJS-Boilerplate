@@ -2,9 +2,9 @@ import * as THREE from 'three'
 import EASE from './utils/easing'
 import Sphere from './class/sphere'
 
-window.addEventListener('load', init)
-
 let scene, camera, renderer, light
+
+init()
 
 
 function init(){
@@ -24,21 +24,16 @@ function init(){
 
     document.body.appendChild(renderer.domElement)
 
+    scene.add(light)
 
     // Instances
     let sphere = new Sphere({
         scene : scene,
-        material : new THREE.MeshPhongMaterial({
-            emissive : 0xffffff,
-            emissiveIntensity : 10
-        })
+        material : new THREE.MeshPhongMaterial()
     })
 
-    console.log('scene', scene)
-    console.log('camera position', camera.position)
-    console.log('scene position', scene.position)
-    console.log('sphere position', sphere)
 
+    window.addEventListener('resize', resize, false);
 
     update()
 }
@@ -47,4 +42,11 @@ function update() {
     requestAnimationFrame(update)
 
     renderer.render(scene, camera)
+}
+
+
+function resize(){
+    renderer.setSize(window.innerWidth, window.innerHeight)
+    camera.aspect = window.innerWidth / window.innerHeight
+    camera.updateProjectionMatrix()
 }
