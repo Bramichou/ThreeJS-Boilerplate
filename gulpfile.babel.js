@@ -69,8 +69,12 @@ gulp.task('compress', (cb) => {
     )
 })
 
-gulp.task('build', () => { return compile() })
-gulp.task('watch', () => { return watch() })
+gulp.task('build', () => {
+    return compile()
+})
+gulp.task('watch', () => {
+    return watch()
+})
 
-gulp.task('default', ['watch', 'browser-sync'])
+gulp.task('default', ['build', 'stylus', 'watch', 'browser-sync'])
 gulp.task('minify', ['compress'])
