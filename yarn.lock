@@ -4431,6 +4431,16 @@ tfunk@^3.0.1:
     chalk "^1.1.1"
     object-path "^0.9.0"
 
+three-trackballcontrols@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/three-trackballcontrols/-/three-trackballcontrols-0.0.5.tgz#d07818f0da68c39ed260bc8a90b5c7b818a6c644"
+  dependencies:
+    three "^0.74.0"
+
+three@^0.74.0:
+  version "0.74.0"
+  resolved "https://registry.yarnpkg.com/three/-/three-0.74.0.tgz#648a2a418dae9e8b5de14661fdc84d38429b72da"
+
 three@^0.84.0:
   version "0.84.0"
   resolved "https://registry.yarnpkg.com/three/-/three-0.84.0.tgz#95be85a55a0fa002aa625ed559130957dcffd918"

@@ -1,8 +1,9 @@
 import * as THREE from 'three'
+import TrackballControls from 'three-trackballcontrols'
 import EASE from './utils/easing'
 import Sphere from './class/sphere'
 
-let scene, camera, renderer, light
+let scene, camera, renderer, light, light2, controls, helper
 
 init()
 
@@ -12,19 +13,20 @@ function init(){
     scene = new THREE.Scene()
 
     camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
-    camera.position.z = 100
+    camera.position.z = 200
 
-    light = new THREE.AmbientLight( 0xffffff )
-    light.position.y = 50
-    light.position.x = 50
-    light.position.z = -50
+    controls = new TrackballControls(camera)
+
+    light = new THREE.DirectionalLight(0xffffff, 1)
+    light2 = new THREE.DirectionalLight(0xffffff, 1)
+    light.position.y = 100
+    light2.position.y = -100
 
     renderer = new THREE.WebGLRenderer()
     renderer.setSize(window.innerWidth, window.innerHeight)
 
     document.body.appendChild(renderer.domElement)
 
-    scene.add(light)
 
     // Instances
     let sphere = new Sphere({
@@ -32,6 +34,11 @@ function init(){
         material : new THREE.MeshPhongMaterial()
     })
 
+    light.target = sphere
+    light2.target = sphere
+
+    scene.add(light)
+    scene.add(light2)
 
     window.addEventListener('resize', resize, false);
 
@@ -40,7 +47,7 @@ function init(){
 
 function update() {
     requestAnimationFrame(update)
-
+    controls.update()
     renderer.render(scene, camera)
 }
 
@@ -48,5 +55,6 @@ function update() {
 function resize(){
     renderer.setSize(window.innerWidth, window.innerHeight)
     camera.aspect = window.innerWidth / window.innerHeight
+
     camera.updateProjectionMatrix()
 }

@@ -1,11 +1,12 @@
 import * as THREE from 'three'
 
-export default class Sphere{
+export default class Sphere extends THREE.Object3D{
     constructor(options) {
+        super(options)
         this.scene = options.scene
         this.radius = options.radius || 20
-        this.widthSegments = options.widthSegments || 30
-        this.heightSegments = options.heightSegments || 30
+        this.widthSegments = options.widthSegments || 40
+        this.heightSegments = options.heightSegments || 40
 
         this.geometry = options.geometry || new THREE.SphereGeometry (this.radius, this.widthSegments, this.heightSegments)
 
@@ -14,10 +15,8 @@ export default class Sphere{
             })
 
         let sphere = new THREE.Mesh(this.geometry, this.material)
-        let box = new THREE.BoxHelper(sphere, 0xffff00)
 
         this.scene.add(sphere)
-        this.scene.add(box)
     }
 
 
