@@ -20,7 +20,7 @@ To build the project, run
 yarn start
 ```
 
-### If you have a white screen after that, just reload the page, the browsersync will not be broken?
+### If you have a white screen after that, just reload the page, the browsersync will not be broken
 
 #### Minify and uglify
 
