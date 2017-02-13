@@ -1,4 +1,4 @@
-# A boiler plate that start a Three.JS project
+# A boilerplate that start a Three.JS project
 
 ## Start a project
 This project use yarn instead of npm, why ? Because it is more FAAAAASSTTTT :) So let's install yarn  [click here](https://yarnpkg.com/lang/en/)
@@ -19,6 +19,8 @@ To build the project, run
 ```
 yarn start
 ```
+
+### If you have a white screen after that, just reload the page, the browsersync will not be broken?
 
 #### Minify and uglify
 
